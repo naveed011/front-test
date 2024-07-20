@@ -1,6 +1,4 @@
 # Unagi Frontend Test - Naveed
-
-
 ## Technologies Used
 
 - **TypeScript**: Superset of JavaScript that adds static types.
@@ -27,11 +25,12 @@
 
 - **File Updated**: `Collection.tsx`
 - **Task**: Fill the `Collection` component to display a single card with the static data.
-- **Bonus**:
-  - Add TypeScript types/interfaces.
-  - Fetch player image URL dynamically.
-  - Implement lazy loading for the player image.
-  - Format player DOB using moment.
+  - **Bonus**:
+    - Add TypeScript types/interfaces.
+    - Fetch player image URL dynamically.
+    - Implement lazy loading for the player image.
+    - Format player DOB using moment.
+    - ![img.png](img.png)
 
 ### 2. Fetch Collection from a Fake REST API
 
@@ -52,6 +51,8 @@
   - Implement client-side validation.
   - Handle server-side errors.
   - Add TypeScript types/interfaces.
+  - ![img_1.png](img_1.png)
+  - ![img_2.png](img_2.png)
 
 ### 4. Show All Cards as a Collection
 
@@ -61,6 +62,7 @@
   - Add loading state.
   - Add empty state.
   - Implement client-side sorting by criteria.
+  - ![img_3.png](img_3.png)
 
 ## Running the Project
 
