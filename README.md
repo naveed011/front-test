@@ -1,120 +1,75 @@
-# Unagi Frontend Test
+# Unagi Frontend Test - Naveed
 
-## Requirements
 
-* [Node.js](https://nodejs.org)
-* [TypeScript](https://www.typescriptlang.org/)
-* [React](https://reactjs.org/)
+## Technologies Used
 
-## Basics
+- **TypeScript**: Superset of JavaScript that adds static types.
+- **React**: JavaScript library for building user interfaces.
+- **Styled Components**: CSS-in-JS library for styling React components.
+- **Formik**: Library for building forms in React with ease.
+- **Yup**: Schema builder for value parsing and validation.
+- **Moment**: For Date of birth formating.
+- **Axios**: For HTTP Request.
 
-**Unagi** is on a mission to upgrade fantasy sport game to a new level.
+## Folder Structure
 
-In this exercise, we'll test your React skills by creating a simple collection card website.
-
-The project is already setup in this repository, so to start, fork it and when
-you are done, invite @hmatthieu and @omar-elshamy on GitHub to collaborate on it.
-
-You are encouraged to go beyond the scope. Check the bonus ideas at each step
-if you need some inspiration.
-
-**Please spend no more than 4 hours on this test unless you go beyond the scope.**
+- **/src**
+  - **/components**: Contains reusable React components (e.g., `Loading`, `Dialog`).
+  - **/hooks**: Custom hooks (e.g., `useCreatePlayer`, `useFetchCollections`, `useFormHook`).
+  - **/pages**: Page components (e.g., `Collection`, `CreateCard`).
+  - **/styles**: Styled Components for styling.
+  - **/types**: TypeScript types and interfaces.
+  - **/utils**: Utility functions.
 
 ## Steps
 
-For each step below you will need to edit some files already provided,
-but don't hesitate to go further, e.g. add new utility or components files.
-Also, it will be great if you split your steps using branches or commits.
+### 1. Show a Single Static Card
 
-Don't hesitate to over-engineer the problem a bit, so we will be able to see
-the way you work, split and organize your file on a real project.
+- **File Updated**: `Collection.tsx`
+- **Task**: Fill the `Collection` component to display a single card with the static data.
+- **Bonus**:
+  - Add TypeScript types/interfaces.
+  - Fetch player image URL dynamically.
+  - Implement lazy loading for the player image.
+  - Format player DOB using moment.
 
-``` sh
-# Install dependencies
-npm install
+### 2. Fetch Collection from a Fake REST API
 
-# Start API & Dev server
-npm start
-```
+- **File Updated**: `collection.ts`
+- **Task**: Modify `fetchCollection` function to fetch data from `http://localhost:8001/cards`.
+- **Bonus**:
+  - Add loading state.
+  - Handle error state.
+  - Implement reusable card component.
+  - Use Styled Components instead of plain CSS.
+  - Add TypeScript types/interfaces.
 
-### 1. Show a single static card on `/collection` page
+### 3. Edit the Popup on `/create-card` Page
 
-Fill `Collection` component in [Collection.tsx](src/pages/Collection.tsx) to show
-a single card with the data stored in `card` variable (line 9).
+- **File Updated**: `CreateCard.tsx`
+- **Task**: Implement a form to create a card using `json-server` for persistence.
+- **Bonus**:
+  - Implement client-side validation.
+  - Handle server-side errors.
+  - Add TypeScript types/interfaces.
 
-This page can be seen on [http://localhost:8000/collection](http://localhost:8000/collection)
+### 4. Show All Cards as a Collection
 
-Bonus points (can be done in arbitrary order):
-- Add TS types/interfaces where applicable.
-- Convert code to fetch the player image without having the full URL,
-  but by generating it with the existing ID.
-- Implement simple lazy loading for the player image, show loading indicator
-  while the image is loading.
-- Format player DOB in a human-readable way.
+- **File Updated**: `Collection.tsx`
+- **Task**: Display a grid of all cards fetched from the API.
+- **Bonus**:
+  - Add loading state.
+  - Add empty state.
+  - Implement client-side sorting by criteria.
+
+## Running the Project
+
+1. **Install Dependencies**: `npm install`
+2. **Start API & Dev Server**: `npm start`
 
 
-### 2. Fetch collection from a fake REST API
+## Notes
 
-Rework `fetchCollection` function in [collection.ts](/src/lib/collection.ts)
-to fetch cards from http://localhost:8001/cards instead of the local constant.
-
-Apply necessary changes to [Collection](/src/pages/Collection.tsx) component if needed.
-
-Bonus points (can be done in arbitrary order):
-- Add loading state in the UI.
-- Handle error state, e.g. if the server returns 500.
-- Implement a reusable card component.
-- Replace existing plain CSS styles with [Styled Components](https://styled-components.com/)
-  if you see the benefits.
-- Add TS types/interfaces in React components where applicable.
-
-### 3. Edit the popup on `/create-card` page
-
-Fill `CreateCard` component in [CreateCard.tsx](/src/pages/CreateCard.tsx) to allow user
-to create a card. In this test project [json-server](https://github.com/typicode/json-server)
-is used as a fake API server.
-
-You can use `json-server` to persist changes for this API.
-Basically, you can POST json onto http://localhost:8001/cards.
-
-Bonus points (can be done in arbitrary order):
-- Implement client-side validation.
-- Implement REST/REST-like endpoint(s).
-- Add TS types/interfaces where applicable.
-- Handle server-side errors, e.g. 4xx on submitting.
-
-### 4. Show all the cards as a collection
-
-On a real use case, we don't want to show only one card, so please update the code to show each
-card in the collection (e.g. a grid of cards).
-
-Make sure that this screen is responsive.
-
-Bonus points (can be done in arbitrary order):
-- Add loading state in the UI.
-- Add empty state (endpoint returns an empty array).
-- Add simple client-side ordering by any criteria - DOB/Last name/First name etc.
-  with a UI control, e.g. Radio button.
-
-## Scoring
-
-You will be evaluated based on the following criteria:
-- **Functionality:**
-  - Does your code work?
-  - Think build, warnings, error management.
-- **Readability:**
-  - Is your code maintainable?
-  - Think code splitting, Typescript, git.
-- **Creativity is a bonus:**
-  - Did you go further the scope? But should not interfere with the two previous point.
-
-**Ideas and tools we love and use in the real project:**
-- TypeScript without `any`
-- Hooks
-- Breaking code down to small pieces
-- Reusable components
-- Types shared across client and backend services
-- Automated code linting and formatting
-- CSS in JS
-
-### Good luck!
+- The project has been structured to promote reusability and maintainability.
+- Components and hooks are organized to ensure clean separation of concerns.
+- Styling is handled using Styled Components to maintain a consistent look and feel.
